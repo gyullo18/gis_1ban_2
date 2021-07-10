@@ -3,5 +3,5 @@ from django.shortcuts import render
 
 # Create your views here.
 
-def hi(request):
-    return HttpResponse('hi hello 안녕')
+def gyullo(request):
+    return render(request, 'base.html')
