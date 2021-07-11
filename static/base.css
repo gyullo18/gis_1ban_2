@@ -1,0 +1,17 @@
+.gyullo_logo {
+    font-family: 'Lobster', cursive;
+}
+
+.gyullo_footer_button{
+    font-size:.6rem
+}
+
+.gyullo_footer{
+    text-align : center;
+    margin-top : 2rem;
+}
+
+.gyullo_header{
+    text-align : center;
+    margin : 2rem 0;
+}
