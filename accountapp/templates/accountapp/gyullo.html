@@ -2,8 +2,26 @@
 
 {% block content %}
 
+    <style>
+        .testing {
+            background-color: white;
+            height: 3rem;
+            width: 3rem;
+            margin : 1rem
+        }
+    </style>
+
     <div style = "height: 20rem; background-color: #f0fff0; border-radius: 1rem; margin: 2rem;">
-        <h1>rolling</h1>
+        <h1>
+            frozen
+        </h1>
+
+        <div class="testing" style="display: block">block</div>
+        <div class="testing" style="display: inline">inline</div>
+        <div class="testing" style="display: none">none</div>
+        <div class="testing" style="display: inline-block">inline-block</div>
+        <div class="testing">default</div>
+
     </div>
 
 {% endblock %}
