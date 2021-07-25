@@ -1,13 +1,39 @@
-{#2rem 0 상하마진 2 좌우마진 0 #}
-    <div class="gyullo_header">
-        <div>
-            <h1 class="gyullo_logo">GYULLO</h1>
-        </div>
-        <div>
-            <span>APEX</span>
-            <span>CYPERS</span>
-            <span>LOSTARK</span>
-            <span>MAPLE STORY</span>
-        </div>
+<div style = 'text-align: center'>
 
+    <div class = "gyullo_header_logo">
+        <h1>GYULLO</h1>
     </div>
+    <div class = 'gyullo_header_button'>
+        <span>APEX</span>
+        <span>LOSTARK</span>
+
+
+        {% if not user.is_authenticated %}
+        <span>
+            <a href="{% url 'accountapp:login' %}">
+                Login
+            </a>
+        </span>
+
+        <span>
+            <a href="{% url 'accountapp:create' %}">
+                SignUp
+            </a>
+        </span>
+        {% else %}
+{#7/15#}
+        <span>
+            <a href="{% url 'accountapp:detail' pk=user.pk %}">
+                MyPage
+            </a>
+        </span>
+        <span>
+            <a href="{% url 'accountapp:logout' %}">
+                Logout
+            </a>
+        </span>
+        {% endif %}
+    </div>
+
+
+</div>

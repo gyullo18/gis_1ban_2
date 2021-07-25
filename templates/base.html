@@ -2,20 +2,18 @@
 <html lang="en">
 
 {% include 'head.html' %}
+<body style="font-family: NanumSquareR">
 
-<body>
-{#border-radius 블록의 가장자리 부분을 부드럽게 만들어주는것#}
+{% include 'header.html' %}
 
-    {% include 'header.html' %}
+<hr>
 
-    <hr>
+{%  block content %}
+{% endblock %}
 
-    {% block content %}
-    {% endblock %}
+<hr>
 
-    <hr>
-
-    {% include 'footer.html' %}
+{% include 'footer.html' %}
 
 </body>
 </html>
