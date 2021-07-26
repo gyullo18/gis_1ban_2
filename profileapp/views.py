@@ -14,3 +14,7 @@ class ProfileCreateView(CreateView):
     template_name = 'profileapp/create.html'#프로필 생성페이지를 어떤html로 사용할지
 
     #라우팅 -- profileapp > urls
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
