@@ -32,7 +32,7 @@ def gyullo(request):
         return HttpResponseRedirect(reverse('accountapp:gyullo')) #어떤 앱 안에 있는 헬로 월드로 가라 #reverse로 redirect
 #get
     else :
-        gyullo_list =   Gyullos.objects.all()
+        gyullo_list = Gyullos.objects.all()
         return render(request, 'accountapp/gyullo.html',
                       context={'gyullo_list': gyullo_list})
 
@@ -42,8 +42,11 @@ def gyullo(request):
 class AccountCreateView(CreateView):
     model = User
     form_class = UserCreationForm
-    success_url = reverse_lazy('accountapp:gyullo')#클래스에서 리버스를 쓰기위함 why?Class와 Funtion은 불러오는 동선이 달라서 but 어카운트 앱에서 헬로월드로 가는건 같음
     template_name = 'accountapp/create.html'#create.html만드는 건 나중에
+
+    # 7/28
+    def get_success_url(self):
+        return reverse('accountapp:detail', kwargs={'pk': self.object.pk})
 
 #7/15
 class AccountDetailView(DetailView):
@@ -61,8 +64,11 @@ class AccountUpdateView(UpdateView):
     model = User
     form_class = AccountCreationForm
     context_object_name = 'target_user'
-    success_url = reverse_lazy('accountapp:gyullo')
     template_name = 'accountapp/update.html'
+
+    # 7/28
+    def get_success_url(self):
+        return reverse('accountapp:detail', kwargs={'pk': self.object.pk})
 
     #7/20 get에 @login_required를 쓰면 메서드기 때문에 적용 안됨
 
