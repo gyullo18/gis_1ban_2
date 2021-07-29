@@ -38,7 +38,7 @@
 .round_button {
     color: black;
     text-decoration: none;
-    box-shadow: 0 0 3px black;  /*그림자 위치들(처음2개) , 그림자의 크기, 색깔*/
+    box-shadow: 3px 3px 3px black;  /*그림자 위치들(처음2개) , 그림자의 크기, 색깔*/
     border-radius: 20rem;
     padding: 0.3rem; /*내부 공간*/
 }
