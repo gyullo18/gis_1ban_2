@@ -10,7 +10,12 @@
                 Articles
             </a>
         </span>
-        <span>LOSTARK</span>
+        {# 8/18 nav바 2번에 prjects로 바로 갈수 있는 버튼 만들어 주기#}
+        <span>
+            <a href="{% url 'projectapp:list' %}">
+                Projects
+            </a>
+        </span>
 
 
         {% if not user.is_authenticated %}

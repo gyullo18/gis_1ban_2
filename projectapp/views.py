@@ -24,7 +24,7 @@ class ProjectCreateView(CreateView):
 
     # 8/18 5분
     def get_success_url(self):
-        return reverse('projectapp:detail', kwargs={'pk': self.object})
+        return reverse('projectapp:detail', kwargs={'pk': self.object.pk})
 
 # 8/12
 #detailview
