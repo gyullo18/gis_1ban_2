@@ -26,4 +26,6 @@ urlpatterns = [
     path('comments/', include('commentapp.urls')),
     #8/12 게시판 구현 url -- projectapp에 urls만들기
     path('projects/', include('projectapp.urls')),
+    #8/19 구독앱 url
+    path('subscribe/', include('subscribeapp.urls')),
 ]+ static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
