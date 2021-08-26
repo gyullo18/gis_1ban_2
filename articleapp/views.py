@@ -23,7 +23,7 @@ from commentapp.forms import CommentCreationForm
 class ArticleCreateView(CreateView):
     model = Article
     form_class = ArticleCreationForm
-    success_url = reverse_lazy('accountapp:gyullo')
+    success_url = reverse_lazy('articleapp:list')
     template_name = 'articleapp/create.html'
 
     #url 라우팅
