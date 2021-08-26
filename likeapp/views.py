@@ -46,13 +46,17 @@ class LikeArticleView(RedirectView):
         user = request.user
         #어떤 게시글에 좋아요를 눌렀는지 -게시글 확보
         article = Article.objects.get(pk=kwargs['article_pk'])
-
+        likeRecord = LikeRecord.objects.filter(user=user,
+                                               article=article)
         # 8/25 Transaction decorator를 위한 부분
         try :
             db_transaction(user, article)
             messages.add_message(request, messages.SUCCESS, '좋아요가 반영되었습니다.')
         except ValidationError :
-            messages.add_message(request, messages.ERROR, '좋아요는 한 번만 가능합니다.')
+            likeRecord.delete()
+            article.like -= 2
+            article.save()
+            messages.add_message(request, messages.ERROR, '좋아요가 취소되었습니다.')
             return HttpResponseRedirect(reverse('articleapp:detail', kwargs={'pk': kwargs['article_pk']}))
 
 
