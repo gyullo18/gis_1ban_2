@@ -84,3 +84,6 @@ __pycache__/
 media/
 
 staticfiles/
+
+gyull_gcp
+gyull_gcp.pub
