@@ -1,0 +1,6 @@
+version: "3.7"
+services:
+  django:
+    image: gis_2_django:2
+    ports:
+      - 8080:8000
